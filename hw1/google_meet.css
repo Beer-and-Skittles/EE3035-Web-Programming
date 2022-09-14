@@ -9,6 +9,8 @@ p {
 .canvas {
     background-color: red;
     position: fixed;
+    /* position:absolute;
+    bottom: 80px; */
     bottom: 80px;
     top: 0px;
     right: 0px;
@@ -32,8 +34,8 @@ body {
     height: 100%;
 }
 
-.main .icon_circle {
-    background-color:magenta;
+#main_mic {
+    background-color:red;
     width: 28px;
     height: 28px;
     border-radius: 50%;
@@ -44,7 +46,9 @@ body {
     display: flex;
     align-items:center;
     justify-content: center;
+    opacity:1;
 }
+
 
 .main_top{
     /* margin: 20px 15px 20px 15px; */
@@ -54,12 +58,6 @@ body {
     top:0;
 }
 
-.main_mid{
-    height:100%;
-    /* border:20px red solid; */
-    display:flex;
-    align-items: center;
-}
 
 .main_bottom{
     /* border: solid 1px chartreuse; */
@@ -87,6 +85,7 @@ body {
 .others {
     background-color:orange;
     float:right;
+    /* width: 100%; */
     width: 28%;
     height: 70%;
     margin-top:4.5%;
@@ -115,8 +114,8 @@ body {
     background-color:pink;
     border-radius: 10px;
     padding: 15px 8px 15px 8px;
-    min-width:120px;
-    min-height:110px;
+    /* min-width:120px; */
+    /* min-height:110px; */
     width: 43%;
     height: 31%;
     margin: 5px;
@@ -124,6 +123,86 @@ body {
     flex-direction:column;
     justify-content: center;
     align-items: center;
+}
+
+.main .portrait {
+    width: 160px;
+    height: 160px;
+    background-color:blue;
+    position: absolute;
+    top: 39%;
+    right: 43%;
+    border-radius: 50%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+.main .tag {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    position: absolute;
+    border-radius:4px;
+    top:110px;
+    width:95%;
+    /* min-width:140px; */
+    max-height:25px;
+    opacity:0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+}
+
+.others .tag {
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    position: absolute;
+    border-radius:4px;
+    top:50px;
+    width:105%;
+    max-height:25px;
+    opacity:0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+}
+
+.nav_bar .tag{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    position: absolute;
+    border-radius:4px;
+    bottom:62px;
+    max-height:25px;
+    opacity:0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+}
+
+.nav_bar .tag{
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    position: absolute;
+    border-radius:4px;
+    bottom:62px;
+    max-height:25px;
+    opacity:0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+}
+
+.icon_circle:hover .tag, .button:hover .tag, .onoff_button:hover .tag {
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+    opacity:1;
+}
+
+.tag p {
+    font-size: 10px;
+    margin-left:2px;
+    margin-right:2px;
+}
+
+.tag p {
+    font-size: 10px;
+    margin-left:2px;
+    margin-right:2px;
 }
 
 
@@ -149,6 +228,25 @@ body {
     justify-content: center;
 }
 
+.button_section > .onoff_button {
+    background-color:red;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 5px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+}
+
+.button_section .onoff_button:hover{
+    background-color: blue;
+}
+
+.button_section .button:hover{
+    background-color: blue;
+}
+
 .icon_section > .button {
     background-color:red;
     width: 40px;
@@ -160,6 +258,14 @@ body {
     justify-content: center;
 }
 
+#switch {
+    min-width: 40px;
+    min-height: 40px;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0.4;
+}
+
 .icon_section > .button{
     background-color:grey;
     width: 40px;
@@ -169,6 +275,10 @@ body {
     margin: 5px;
 }
 
+.icon_section > .button:hover{
+    background-color:darkgrey;
+}
+
 .canvas .fa-microphone-slash{
     color:white;
     background-color:transparent;
@@ -176,7 +286,59 @@ body {
     font-size: 12px;
 }
 
-.button_section .fa-solid{
+.mic_blocker{
+    background-color:orange;
+    opacity:0.2;
+    min-height:55px;
+    min-width:5000px;
+    position:fixed;
+    top:0;
+    right:0;
+}
+
+#switch:checked~ .mic_blocker{
+    opacity:1;
+}
+
+#switch:checked~ #on_icon{
+    opacity:0;
+}
+
+#switch:checked~ #main_mic {
+    background-color:orange;
+    height:2rem;
+}
+
+#switch:checked~ #off_icon{
+    opacity:1;
+}
+
+#switch:checked~ #on_text{
+    opacity:0;
+}
+
+#switch:checked~ #off_text{
+    opacity:1;
+}
+
+#on_icon{
+    color:white;
+    background-color:transparent;
+    /* padding: 5px; */
+    font-size: 20 px;
+    position:absolute;
+    opacity:1;
+}
+
+#off_icon{
+    color:white;
+    background-color:transparent;
+    font-size: 20 px;
+    position:absolute;
+    opacity:0;
+}
+
+.button > .fa-solid{
     color:white;
     background-color:transparent;
     padding: 5px;
@@ -190,21 +352,10 @@ body {
     font-size: 20 px;
 }
 
-
-
-.main .portrait {
-    width: 160px;
-    height: 160px;
-    background-color:blue;
-    border-radius: 50%;
-    margin:auto;
-}
-
-
 .last_user {
     background-color: hotpink;
     width: 67%;
-    height: 145px;
+    height: 35%;
 }
 
 .last_user .portrait {
@@ -230,12 +381,12 @@ body {
     justify-content:right;
 }
 .user_bottom{
-    /* background-color: red; */
-    background-color: transparent;
+    background-color: greenyellow;
+    /* background-color: transparent; */
     height: 30px;
     width: 100%;
     display: flex;
-    align-items:flex-start;
+    align-items:center;
     justify-content:left;
     font-weight: 300;
 }
@@ -263,6 +414,7 @@ body {
 .bar{
     /* visibility: hidden; */
     opacity:0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
     position: absolute;
     border-radius:40px;
     display:flex;
@@ -278,10 +430,26 @@ body {
     transition: visibility 0ms linear 300ms, opacity 300ms;
 }
 
+.main:hover  .main_bar{
+    opacity:0.6;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+}
 
-.bar > .icon_circle {
+.main_bar {
+    background-color:orange;
+    width: 120px;
+    height:40px;
+    display:flex;
+    opacity: 0;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
+    border-radius: 20px;
+}
+
+
+.bar > .icon_circle, .main_bar > .icon_circle{
     background-color:lightseagreen;
     opacity:0.5;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
     margin:0;
     width: 40px;
     height: 40px;
@@ -291,7 +459,7 @@ body {
     justify-content: center;
 }
 
-.bar .fa-solid{
+.bar .fa-solid, .main_bar .fa-solid{
     color:red;
     background-color:transparent;
     font-size:22px;
@@ -299,6 +467,59 @@ body {
 
 .icon_circle:hover{
     opacity: 0.85;
+    transition: visibility 0ms linear 300ms, opacity 300ms;
 }
 
+/* width 1330 */
+/* height 625 */
 
+@media only screen and (max-width: 1330px){
+    .main{
+        width:100%;
+        height:70%;
+        opacity:0.5;
+    }
+    .others{
+        position:absolute;
+        bottom: 0px;
+        width:100%;
+        height:30%;
+    }
+    .user{
+        margin-top:20px;
+        width:16%;
+        height:60%;
+    }
+}
+
+@media only screen and (max-height: 625px){
+    .main{
+        width:40%;
+    }
+    .others{
+        width:60%;
+    }
+    .user{
+        width:30%;
+        height:30%;
+    }
+    .semi_last_user, .last_user{
+        width:40%;
+        height:40%;
+    }
+    .last_user .portrait{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media only screen and (max-height: 490px){
+    .user{
+        width:15%;
+        height:60%;
+    }
+    .main .portrait{
+        width:130px;
+        height:130px;
+    }
+}

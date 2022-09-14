@@ -9,13 +9,27 @@
     <body scroll="no" style="overflow: hidden">
         <div class="canvas">
             <div class="main">
+                
                 <div class="main_top">
-                    <div class="icon_circle">
+                    <div class="icon_circle" id="main_mic">
                         <i class="fa-solid fa-microphone-slash"></i>
                     </div>
                 </div>
-                <div class="main_mid">
-                    <div class="portrait"></div>
+                <div class="portrait">
+                    <div class="main_bar">
+                        <div class="icon_circle">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>在主畫面取消固定你自己</p>
+                            </div>
+                        </div>
+                        <div class="icon_circle">
+                            <i class="fa-solid fa-border-none"></i>
+                        </div>
+                        <div class="icon_circle">
+                            <i class="fa-solid fa-down-left-and-up-right-to-center"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="main_bottom">
                     <i class="fa-solid fa-thumbtack"></i>
@@ -27,12 +41,21 @@
                     <div class="bar">
                         <div class="icon_circle">
                             <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>將ABC固定在畫面</p>
+                            </div>
                         </div>                    
                         <div class="icon_circle">
                             <i class="fa-solid fa-microphone-slash"></i>
+                            <div class="tag">
+                                <p>你無法為他人取消靜音</p>
+                            </div>
                         </div>                   
                         <div class="icon_circle">
                             <i class="fa-solid fa-circle-xmark"></i>
+                            <div class="tag">
+                                <p>將ABC從通話中移除</p>
+                            </div>
                         </div>                   
                     </div>
                     <div class="user_top">
@@ -51,12 +74,21 @@
                     <div class="bar">
                         <div class="icon_circle">
                             <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>將ABC固定在畫面</p>
+                            </div>
                         </div>                    
                         <div class="icon_circle">
                             <i class="fa-solid fa-microphone-slash"></i>
+                            <div class="tag">
+                                <p>你無法為他人取消靜音</p>
+                            </div>
                         </div>                   
                         <div class="icon_circle">
                             <i class="fa-solid fa-circle-xmark"></i>
+                            <div class="tag">
+                                <p>將ABC從通話中移除</p>
+                            </div>
                         </div>                   
                     </div>
                     <div class="user_top">
@@ -75,12 +107,21 @@
                     <div class="bar">
                         <div class="icon_circle">
                             <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>將ABC固定在畫面</p>
+                            </div>
                         </div>                    
                         <div class="icon_circle">
                             <i class="fa-solid fa-microphone-slash"></i>
+                            <div class="tag">
+                                <p>你無法為他人取消靜音</p>
+                            </div>
                         </div>                   
                         <div class="icon_circle">
                             <i class="fa-solid fa-circle-xmark"></i>
+                            <div class="tag">
+                                <p>將ABC從通話中移除</p>
+                            </div>
                         </div>                   
                     </div>
                     <div class="user_top">
@@ -95,16 +136,25 @@
                         <p>カオナシ</p> 
                     </div>
                 </div>
-                <div class="user">
+                <div class="user semi_last_user">
                     <div class="bar">
                         <div class="icon_circle">
                             <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>將ABC固定在畫面</p>
+                            </div>
                         </div>                    
                         <div class="icon_circle">
                             <i class="fa-solid fa-microphone-slash"></i>
+                            <div class="tag">
+                                <p>你無法為他人取消靜音</p>
+                            </div>
                         </div>                   
                         <div class="icon_circle">
                             <i class="fa-solid fa-circle-xmark"></i>
+                            <div class="tag">
+                                <p>將ABC從通話中移除</p>
+                            </div>
                         </div>                   
                     </div>
                     <div class="user_top">
@@ -123,12 +173,21 @@
                     <div class="bar">
                         <div class="icon_circle">
                             <i class="fa-solid fa-thumbtack"></i>
+                            <div class="tag">
+                                <p>將ABC固定在畫面</p>
+                            </div>
                         </div>                    
                         <div class="icon_circle">
                             <i class="fa-solid fa-microphone-slash"></i>
+                            <div class="tag">
+                                <p>你無法為他人取消靜音</p>
+                            </div>
                         </div>                   
                         <div class="icon_circle">
                             <i class="fa-solid fa-circle-xmark"></i>
+                            <div class="tag">
+                                <p>將ABC從通話中移除</p>
+                            </div>
                         </div>                   
                     </div>
                     <div class="user_top">
@@ -150,37 +209,72 @@
                 <p>晚上8:42 | xcv-smyc-gcq</p>
             </div>
             <div class="button_section">
-                <div class="button">
-                    <i class="fa-solid fa-microphone-slash"></i>
+                <div class="onoff_button">
+                    <input type="checkbox" id="switch">
+                    <div class="mic_blocker"></div>
+                    <i class="fa-solid fa-microphone-slash" id="on_icon"></i>
+                    <i class="fa-solid fa-microphone" id="off_icon"></i>
+                    <div class="tag">
+                        <p>開關麥克風 (Ctrl+D)</p>
+                    </div>
                 </div>
                 <div class="button">
-                    <i class="fa-solid fa-video"></i>
+                    <input type="checkbox" id="switch">
+                    <i class="fa-solid fa-video-slash" id="on_icon"></i>
+                    <i class="fa-solid fa-video" id="off_icon"></i>
+                    <div class="tag">
+                        <p>開關攝影機 (Ctrl+E)</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-display"></i>
+                    <div class="tag">
+                        <p>立即分享螢幕畫面</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-ellipsis-vertical"></i>
+                    <div class="tag">
+                        <p>更多選項</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-phone"></i>
+                    <div class="tag">
+                        <p>退出通話</p>
+                    </div>
                 </div>
             </div>
             <div class="icon_section">
                 <div class="button">
                     <i class="fa-solid fa-circle-info"></i>
+                    <div class="tag">
+                        <p>會議詳細資料</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-user-group"></i>
+                    <div class="tag">
+                        <p>顯示所有參與者</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-message"></i>
+                    <div class="tag">
+                        <p>與所有參與者進行即時通訊)</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-icons"></i>
+                    <div class="tag">
+                        <p>活動</p>
+                    </div>
                 </div>
                 <div class="button">
                     <i class="fa-solid fa-lock"></i>
+                    <div class="tag">
+                        <p>主辦人</p>
+                    </div>
                 </div>
             </div>
         </div>
