@@ -17,7 +17,8 @@
 
 3. 功能按鈕
 * 當滑鼠游標進入(hover)主畫⾯時，中間的圓會浮現出三個額外的功能按鈕，並以⼀個半透明的橢圓形包覆起來，⽽當游標進入此橢圓時，則此橢圓形的透明度會降低(顏⾊變深)。
-![imgs/img5.png](imgs/img5.png)![imgs/img6.png](imgs/img6.png)
+![imgs/img5.png](imgs/img5.png)
+![imgs/img6.png](imgs/img6.png)
 </br><br>
 
 ### 進階功能
