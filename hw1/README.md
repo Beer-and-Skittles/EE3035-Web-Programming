@@ -13,7 +13,7 @@
 2. HTML element
 * 主畫⾯、中間的圓、右上與左下的資訊，皆應為不同的 HTML elements。
 
-    <img src="imgs/img2.png" alt="imgs/img2" width=350/> <img src="imgs/img3.png" alt="imgs/img3" width=350/> <img src="imgs/img4.png" alt="imgs/img4" width=350/>
+    <img src="imgs/img2.png" alt="imgs/img2" width=300/> <img src="imgs/img3.png" alt="imgs/img3" width=300/> <img src="imgs/img4.png" alt="imgs/img4" width=300/>
 </br><br>
 
 3. 功能按鈕
