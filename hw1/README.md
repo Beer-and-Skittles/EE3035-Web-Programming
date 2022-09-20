@@ -12,13 +12,14 @@
 
 2. HTML element
 * 主畫⾯、中間的圓、右上與左下的資訊，皆應為不同的 HTML elements。
-<img src="imgs/img2.png" alt="imgs/img2" width=200/><img src="imgs/img3.png" alt="imgs/img3" width=200/><img src="imgs/img4.png" alt="imgs/img4" width=200/>
+
+<img src="imgs/img2.png" alt="imgs/img2" width=200/> <img src="imgs/img3.png" alt="imgs/img3" width=200/> <img src="imgs/img4.png" alt="imgs/img4" width=200/>
 </br><br>
 
 3. 功能按鈕
 * 當滑鼠游標進入(hover)主畫⾯時，中間的圓會浮現出三個額外的功能按鈕，並以⼀個半透明的橢圓形包覆起來，⽽當游標進入此橢圓時，則此時橢圓形的透明度會降低(顏⾊變深)。
 
-<img src="imgs/img5.png" alt="imgs/img5" width=400/><img src="imgs/img6.png" alt="imgs/img6" width=400/>
+<img src="imgs/img5.png" alt="imgs/img5" width=200/> <img src="imgs/img6.png" alt="imgs/img6" width=200/>
 </br><br>
 
 ### 進階功能
@@ -31,8 +32,4 @@
 </br><br>
 
 3. 做到「Responsive Webb Design (RWD)」，讓網⾴在放⼤、縮⼩時排版不⾄於亂掉，⽽仍保有原來完整的功能。網頁支援在一般筆電螢幕上縱向或橫向的拉伸(僅單方向)。
-![imgs/imga.png](imgs/imga.png)
-![imgs/imgb.png](imgs/imgb.png)
-![imgs/imgc.png](imgs/imgc.png)
-![imgs/imgd.png](imgs/imgd.png)
-![imgs/imge.png](imgs/imge.png)
+<img src="imgs/imga.png" alt="imgs/imga" height=150/> <img src="imgs/imgb.png" alt="imgs/imgb" height=150/> <img src="imgs/imgc.png" alt="imgs/imgc" height=150/> <img src="imgs/imgd.png" alt="imgs/imgd" height=150/> <img src="imgs/imge.png" alt="imgs/imge" height=150/>
