@@ -13,7 +13,7 @@
 2. HTML element
 * 主畫⾯、中間的圓、右上與左下的資訊，皆應為不同的 HTML elements。
 
-<img src="imgs/img2.png" alt="imgs/img2" width=200/> <img src="imgs/img3.png" alt="imgs/img3" width=200/> <img src="imgs/img4.png" alt="imgs/img4" width=200/>
+<img src="imgs/img2.png" alt="imgs/img2" width=350/> <img src="imgs/img3.png" alt="imgs/img3" width=350/> <img src="imgs/img4.png" alt="imgs/img4" width=350/>
 </br><br>
 
 3. 功能按鈕
@@ -24,12 +24,13 @@
 
 ### 進階功能
 1. 當游標滑⾄每個功能按鈕之上(hover)時，會在功能按鈕上⽅顯⽰此功能之提⽰。包含頭像前功能鍵、正下方按鈕、右下方功能。
-![imgs/img7.png](imgs/img7.png)
+<img src="imgs/img7.png" alt="imgs/img7" width=400/>
 </br><br>
 
 2. 點擊靜⾳按鈕時，可以切換靜⾳/無靜⾳與開啟/關閉攝像頭。開啟麥克風時，主頭像上方的靜音標示消失。
-![imgs/img8.png](imgs/img8.png)![imgs/img9.png](imgs/img9.png)
+<img src="imgs/img8.png" alt="imgs/img8" width=400/> <img src="imgs/img9.png" alt="imgs/img9" width=400/>
 </br><br>
 
 3. 做到「Responsive Webb Design (RWD)」，讓網⾴在放⼤、縮⼩時排版不⾄於亂掉，⽽仍保有原來完整的功能。網頁支援在一般筆電螢幕上縱向或橫向的拉伸(僅單方向)。
-<img src="imgs/imga.png" alt="imgs/imga" height=150/> <img src="imgs/imgb.png" alt="imgs/imgb" height=150/> <img src="imgs/imgc.png" alt="imgs/imgc" height=150/> <img src="imgs/imgd.png" alt="imgs/imgd" height=150/> <img src="imgs/imge.png" alt="imgs/imge" height=150/>
+
+<img src="imgs/imga.png" alt="imgs/imga" height=200/> <img src="imgs/imgb.png" alt="imgs/imgb" height=200/> <img src="imgs/imgc.png" alt="imgs/imgc" height=200/> <img src="imgs/imgd.png" alt="imgs/imgd" height=200/> <img src="imgs/imge.png" alt="imgs/imge" height=200/>
