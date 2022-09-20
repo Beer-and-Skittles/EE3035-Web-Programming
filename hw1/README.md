@@ -7,19 +7,18 @@
 * 右邊顯⽰五個其他的會議參與者。每位參與者畫⾯的中間有個圓顯⽰使⽤者的名稱或是頭像，右上⾓顯⽰是否靜⾳，左下⾓顯⽰使⽤者名稱。
 
 * 下⽅的資訊/功能由左⾄右依序顯⽰時間、會議名稱、⼀些功能按鈕、⼀些會議資訊按鈕等。
-    ![imgs/img1.png](imgs/img1.png)
+    <img src="imgs/img1.png" alt="imgs/img1" width=400/>
 </br><br>
 
 2. HTML element
 * 主畫⾯、中間的圓、右上與左下的資訊，皆應為不同的 HTML elements。
-![imgs/img2.png](imgs/img2.png)![imgs/img3.png](imgs/img3.png)![imgs/img4.png](imgs/img4.png)
+<img src="imgs/img2.png" alt="imgs/img2" width=200/><img src="imgs/img3.png" alt="imgs/img3" width=200/><img src="imgs/img4.png" alt="imgs/img4" width=200/>
 </br><br>
 
 3. 功能按鈕
 * 當滑鼠游標進入(hover)主畫⾯時，中間的圓會浮現出三個額外的功能按鈕，並以⼀個半透明的橢圓形包覆起來，⽽當游標進入此橢圓時，則此時橢圓形的透明度會降低(顏⾊變深)。
 
-![imgs/img5.png](imgs/img5.png)
-![imgs/img6.png](imgs/img6.png)
+<img src="imgs/img5.png" alt="imgs/img5" width=400/><img src="imgs/img6.png" alt="imgs/img6" width=400/>
 </br><br>
 
 ### 進階功能
