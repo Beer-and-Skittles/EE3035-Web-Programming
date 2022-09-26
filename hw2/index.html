@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=“viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Photo Album</title>
+    <script src="https://kit.fontawesome.com/03fe72c96c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css"/>
+</head>
+
+<body onload="init();">
+    <script src="main.js"></script>
+    <div id="canvas">
+        <div id="canvas_left">
+            <div class="displaying_main_user" id="main0">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    0
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">Zero</div>
+            </div>
+            <div class="main_user display_off" id="main1">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    1
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">One</div>
+            </div>
+            <div class="main_user display_off" id="main2">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    2
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">Two</div>
+            </div>
+            <div class="main_user display_off" id="main3">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    3
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">Three</div>
+            </div>
+            <div class="main_user display_off" id="main4">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    4
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">Four</div>
+            </div>
+            <div class="main_user display_off" id="main5">
+                <div class="user_top_sec">
+                    <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                    <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                </div>
+                <div class="user_mid_sec">
+                    5
+                    <div class="user_bar">
+                        <i class="fa-solid fa-thumbtack"></i>
+                        <i class="fa-solid fa-microphone-slash"></i>
+                        <i class="fa-solid fa-circle-xmark"></i>
+                    </div>
+                </div>
+                <div class="user_btm_sec">Five</div>
+            </div>
+        </div>
+        <div id="canvas_right">
+            <div id="user_container">
+                <div class="user display_off" id="sub0">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        0
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">Zero</div>
+                </div>
+                <div class="user" id="sub1">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        1
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">One</div>
+                </div>
+                <div class="user" id="sub2">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        2
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">Two</div>
+                </div>
+                <div class="user" id="sub3">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        3
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">Three</div>
+                </div>
+                <div class="user" id="sub4">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        4
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">Four</div>
+                </div>
+                <div class="user" id="sub5">
+                    <div class="user_top_sec">
+                        <div class="user_btn remove_icn"><i class="fa-solid fa-xmark"></i></div>
+                        <div class="user_btn silent_icn"><i class="fa-solid fa-microphone-lines-slash"></i></div>
+                    </div>
+                    <div class="user_mid_sec">
+                        5
+                        <div class="user_bar">
+                            <i class="fa-solid fa-thumbtack"></i>
+                            <i class="fa-solid fa-microphone-slash"></i>
+                            <i class="fa-solid fa-circle-xmark"></i>
+                        </div>
+                    </div>
+                    <div class="user_btm_sec">Five</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="navbar">
+        <div class="text_section">
+            <p>晚上8:42 | xcv-smyc-gcq</p>
+        </div>
+        <div class="button_section">
+            <div class="button red_button">
+                <i class="fa-solid fa-microphone-slash"></i>
+            </div>
+            <div class="button red_button">
+                <i class="fa-solid fa-video-slash"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-display"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-phone"></i>
+            </div>
+        </div>
+        <div class="icon_section">
+            <div class="button">
+                <i class="fa-solid fa-circle-info"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-user-group"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-message"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-icons"></i>
+            </div>
+            <div class="button">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
