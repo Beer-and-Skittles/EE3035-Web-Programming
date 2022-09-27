@@ -338,49 +338,47 @@ body{
 
 /* colors */
 #sub0 > .user_mid_sec, #main0 > .user_mid_sec{
-    background-color: #545d6b;
+    background-color:rgb(119,132,149);
 }
 #sub1 > .user_mid_sec, #main1 > .user_mid_sec{
-    background-color: #fe585c;
+    background-color: rgb(248,77,77);
 }
 #sub2 > .user_mid_sec, #main2 > .user_mid_sec{
-    background-color: #677bb6;
+    background-color: rgb(91,163,235);
 }
 #sub3 > .user_mid_sec, #main3 > .user_mid_sec{
-    background-color: #ff88aa;
+    background-color: rgb(119,132,149);
 }
 #sub4 > .user_mid_sec, #main4 > .user_mid_sec{
-    background-color: #fafcb0;
+    background-color: rgb(244,185,25);
 }
 #sub5 > .user_mid_sec, #main5 > .user_mid_sec{
-    background-color: #2d957e;
+    background-color: rgb(6,187,154);
 }
 #sub6 > .user_mid_sec, #main6> .user_mid_sec{
-    background-color: #945b6c;
+    background-color: rgb(91,163,235);
 }
 #sub7 > .user_mid_sec, #main7 > .user_mid_sec{
-    background-color: #7ad7ea;
+    background-color: rgb(255,107,66);
 }
 #sub8 > .user_mid_sec, #main8 > .user_mid_sec{
-    background-color: #2e5d61;
+    background-color: rgb(119,132,149);
 }
 #sub9 > .user_mid_sec, #main9 > .user_mid_sec{
-    background-color: #343466;
-    color:white;
+    background-color: rgb(142,126,240);
 }
 #suba > .user_mid_sec, #maina > .user_mid_sec{
-    background-color: #e1938f;
+    background-color: rgb(142,126,240);
 }
 #subb > .user_mid_sec, #mainb > .user_mid_sec{
-    background-color: #e5c7bf;
+    background-color: rgb(244,185,25);
 }
 #subc > .user_mid_sec, #mainc > .user_mid_sec{
-    background-color: #6f4b30;
-    color:white;
+    background-color: rgb(255,107,66);
 }
 #subd > .user_mid_sec, #maind > .user_mid_sec{
-    background-color: #9fe1bd;
+    background-color: rgb(6,187,154);
 }
 #sube > .user_mid_sec, #maine > .user_mid_sec{
-    background-color: #dadada;
+    background-color: rgb(248,77,77);
 }
