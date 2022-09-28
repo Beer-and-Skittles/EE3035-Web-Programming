@@ -113,11 +113,11 @@ body{
     height: 19%;
 }
 .h_r_4 .user_top_sec .user_btn, .h_r_5 .user_top_sec .user_btn{
-    width:20px;
-    height:20px;
+    width:23px;
+    height:23px;
 }
 .h_r_4 .user_top_sec .fa_solid, .h_r_5 .user_top_sec .fa_solid{
-    font-size: 14px;
+    font-size: 12x;
 }
 .h_r_4 .user_mid_sec, .h_r_5 .user_mid_sec{
     max-width:40px;
