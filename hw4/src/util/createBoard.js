@@ -77,6 +77,8 @@ export default (boardSize, mineNum) => {
     }
 
     //  Testing: printBoard()
+    // alert('board length '+ board.length);
+    // alert('mine locations '+ mineLocations.length)
 
     return { board, mineLocations };
 };

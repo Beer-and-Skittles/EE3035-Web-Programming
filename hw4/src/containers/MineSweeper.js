@@ -20,7 +20,7 @@ const MineSweeper = () => {
 
     // Basic TODO: Change `startGame` from false to true when this function is called
     const startGameOnClick = () => {
-        alert('game start');
+        // alert('game start');
         setStartGame(true);
     }
 
@@ -45,7 +45,7 @@ const MineSweeper = () => {
             {/* Basic TODO: `HomePage` and `Board` will switch based on the mode of `startGame`. If `startGame` is true, show `Board`; else show `HomePage` */}
             { startGame ? (
                 <div>
-                    <Board/>
+                    <Board boardSize={boardSize} mineNum={mineNum}/>
                 </div>
             ):(
                 <div>

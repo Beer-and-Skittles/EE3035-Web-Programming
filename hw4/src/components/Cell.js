@@ -33,8 +33,6 @@ export default function Cell({ rowIdx, colIdx, detail, updateFlag, revealCell })
     );
 }
 
-
-
 const mineCheckPattern = (x, y) => {
     if (x % 2 === 0 && y % 2 === 0) return '#c0c0c0';
     else if (x % 2 === 0 && y % 2 !== 0) return '#bbbbbb';
