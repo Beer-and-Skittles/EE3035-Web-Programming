@@ -23,6 +23,8 @@ const HomePage = ({ startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNu
       setError(true);
     }else{
       setError(false);
+      mineNumOnChange(localMN);
+      boardSizeOnChange(localBS);
     }
   });
   

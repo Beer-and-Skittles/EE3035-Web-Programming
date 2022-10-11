@@ -26,13 +26,13 @@ const MineSweeper = () => {
 
     // Advanced TODO: Change `mineNum` to the number you send by this function
     const mineNumOnChange = (value) => {
-        alert("change mine-number to "+value);
+        // alert("change mine-number to "+value);
         setMineNum(value);
     }
 
     // Advanced TODO: Change `boardSize` to the number you send by this function
     const boardSizeOnChange = (value) => {
-        alert("change board size to "+value); 
+        // alert("change board size to "+value); 
         setBoardSize(value);
     }
 
