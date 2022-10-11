@@ -44,6 +44,10 @@ const HomePage = ({ startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNu
     setlocalBS(document.getElementById('board_size').value);
   }
 
+  const alertError = () => {
+    alert('mine number should not exceed the square of board size!');
+  }
+
   const controlNumStyle = {
     color: error ? '#880000' : '#0f0f4b',
   };
@@ -71,7 +75,7 @@ const HomePage = ({ startGameOnClick, mineNumOnChange, boardSizeOnChange, mineNu
   return (
     <div className='HomeWrapper'>
       <p className='title'>MineSweeper</p>
-      <button className='btn' onClick={error ? null : startGameOnClick}>Start Game</button>
+      <button className='btn' onClick={error ? alertError : startGameOnClick}>Start Game</button>
       <div className='controlConatinaer'>
         <button className='btn' onClick={toggleShowPanel}>Difficulty Adjustment</button>
         {showPanel ? controlPanel : null}
