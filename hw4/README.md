@@ -1,6 +1,6 @@
 # HW4 MineSweeper
 
-## 作業基本要求及進階功能皆已完成
+## 作業基本要求及進階功能都已完成
 
 ![](https://i.imgur.com/pfsPBRR.png)
 ## [Demo Video](https://www.youtube.com/watch?v=mDx4bi-rA-Q)
