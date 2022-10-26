@@ -12,22 +12,24 @@ function App() {
 
   const startGame = () => {
     setHasStarted(true);
-    alert(start());
+    start();
   }
 
   const restartGame = () => {
     setHasWon(false);
+    setNumber('');
+    setStatus('');
     restart();
   }
 
   const handleGuess = async () => {
+    document.getElementById("inputBox").value = '';
     const response = await guess(number);
-    alert(response);
-    if(response === 'equal'){
+    setStatus(response);
+    
+    if(response === 'Equal'){
       setHasWon(true);
-
-    }else {
-      setStatus(response);
+    }else{
       setNumber('');
     }
   }

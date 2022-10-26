@@ -1,11 +1,13 @@
 let num = null;
 
 const genNumber = () => {
-    number = Math.floor(Math.random() * 100) + 1;
+    num = Math.floor(Math.random() * 100) + 1;
+    console.log(num);
+    return num;
 }
 
 const getNumber = () => {
     return num;
 }
 
-export default {genNumber, getNumber}
+export {genNumber, getNumber}
