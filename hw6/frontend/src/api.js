@@ -3,6 +3,7 @@ import axios from 'axios';
 const instance = axios.create({
   baseURL: `http://localhost:4000/`,
 });
+// instance.post('/cards')
 
 export default instance;
 
