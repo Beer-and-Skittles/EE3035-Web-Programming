@@ -1,30 +1,53 @@
 import {useState} from 'react';
+const client = new WebSocket('ws://localhost:4000');
+
 
 const useChat = () => {
     const [messages, setMessages] = useState([]);
     const [status, setStatus] = useState({});
-
     
-    const client = new WebSocket('ws://localhost:4000');
-    const snedData = async (data) => {
+    const sendData = async (data) => {
+        // alert('sending') 
         await client.send(JSON.stringify(data));
         // data sent thru internet is treated as byte string, therefore must be stringified
     };
 
+    client.onmessage = (byteString) => {
+        const {data} = byteString;
+        const [task, payload] = JSON.parse(data);
+        console.log(task,payload)
+        switch (task) {
+            case 'output' : {
+                setMessages([...messages, payload]);
+                break;
+            }
+            case 'status' : {
+                setStatus(payload);
+                break;
+            }
+            case 'init' : {
+                console.log("In Init")
+                setMessages(payload);
+                break;
+            } 
+            case 'cleared' : {
+                console.log("In Clear")
+                // setMessages([]);
+                break;
+            }
+            default: break;
+        }
+    }
+
+    const clearMessages = () => {
+        sendData(['clear']);
+    };
 
     const sendMessage = (payload) => {
-        // ws_client.sendData(type,payload)
-        snedData(['input',payload]);    
-        setMessages([...messages,payload])
-        console.log('here');
-        setStatus({
-            type: "success",
-            msg: "Message sent."
-        });
-        console.log(payload);
+        sendData(['input',payload]);    
     }
     return {
-        status, messages, sendMessage
+        status, messages, sendMessage, clearMessages
     };
 };
 
