@@ -1,56 +1,76 @@
-import Message from './models/message.js';
+import {MessageModel, ChatBoxModel, UserModel} from './models/chatbox.js';
 
-const sendData = (data, ws) => {
-    console.log('send data');
-    ws.send(JSON.stringify(data));
+const broadcastData = (data, wss) => {
+    wss.clients.forEach((client) => {
+        client.send(JSON.stringify(data));
+    })
+}
+
+const sendChat = (payload, ws) => {
+    ws.send(JSON.stringify(['chat',payload]));
 }
 
 const sendStatus = (payload, ws) => {
-    sendData(['status', payload], ws);
+    ws.send(JSON.stringify(['status',payload]));
 }
 
+const makeName = (name,to) => {
+    return [name, to].sort().join('_');
+};
+
 export default {
-    initData: (ws) => {
-        Message.find().sort({created_at: -1}).limit(100)
-            .exec((err, res) => {
-                console.log(res);
-                if (err) throw err;
-                sendData(["init", res], ws);
-            });
-    },
-
-    onMessage: (ws) => (
-        // (byteString) => {
+    onMessage: (ws, wss) => (
         async (byteString) => {
-            console.log('on message')
-            const {data} = byteString
-            const [task, payload] = JSON.parse(data)
-            console.log(task, payload);
+            const {data} = byteString;
+            const [task, payload] = JSON.parse(data);
             switch (task) {
-                // case 'clear': {
-                //     Message.deleteMany({},() => {
-                //         sendData(['cleared'], ws)
-                //         sendStatus({type:'info', msg: 'Message cache cleared.'}, ws)
-                //     })
-                //     break;
-                // }
-                case 'input': {
-                    const {name, body} = payload
 
-                    // save payload to db
-                    const message = new Message({name, body})
-                    // try { message.save();}
-                    try { await message.save();}
-                    catch (e) {throw new Error
-                    ("Message DB save error: "+error)}
+                // payload => {name, to}
+                case 'chat': {                          
+                    const msg_models = await MessageModel.find({$or: [{sender:payload.name, to:payload.to},{sender:payload.to, to:payload.name}]});
+                    let msgs = [];
+                    for (let i=0; i<msg_models.length; i++){
+                        if (msg_models[i].sender === payload.name){
+                            msgs.push({name: payload.name, to: payload.to, body: msg_models[i].body});
+                        }else if (msg_models[i].sender === payload.to){
+                            msgs.push({name: payload.to, to: payload.name, body: msg_models[i].body});
+                        }
+                    }
+                    sendChat(msgs,ws);
+                    break;
+                }
 
-                    // respond to client
-                    sendData(['output', [payload]], ws)
+                // payload => {name, to, body}
+                case 'message': {   
+                   
+                    const chatbox_name = makeName(payload.to, payload.name);
+
+                    // new message model
+                    const this_message = new MessageModel({sender: payload.name, to:payload.to, body:payload.body});
+                    try { await this_message.save();}
+                    catch (e) {throw new Error ('Message DB save error: ' + error);}
+
+                    // new or update chatbox
+                    let this_chatbox = await ChatBoxModel.findOne({name: chatbox_name});
+                    if(this_chatbox){
+                        await ChatBoxModel.updateOne({name : chatbox_name},{$push :{messages: this_message._id}});
+                    }else{
+                        this_chatbox = new ChatBoxModel({name: chatbox_name, messages:[this_message._id]});
+                        try { await this_chatbox.save();}
+                        catch (e) {throw new Error ('Message DB save error: ' + error);}
+                    }
+                    
+                    broadcastData(['output', {name: payload.name, to:payload.to, body:payload.body}],wss)
                     sendStatus({
                         type: 'success',
                         msg: 'Message sent.'
-                    }, ws)
-                    break
+                    }, ws);
+                    break;
+                }  
+
+                // payload => null
+                case 'clear': {     
+                    break;
                 }
                 default: break
             }

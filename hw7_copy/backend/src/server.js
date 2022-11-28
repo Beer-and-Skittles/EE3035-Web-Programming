@@ -1,5 +1,4 @@
 import express from 'express'
-import {v4 as uuidv4} from 'uuid';
 import mongoose from 'mongoose'
 import mongo from './mongo'
 import http from 'http'
@@ -16,13 +15,11 @@ const db = mongoose.connection
 db.once('open', () => {
     console.log('MongoDB connected!');
     wss.on('connection', (ws) => {
-        ws.id = uuidv4();   // provides key for websocket
-        ws.box = '';        // keep track of client's current chat box
-        ws.onmessage = wsConnect.onMessage(ws, wss);
-
-        // wss.clients.forEach(function each(client) {
-        //     console.log('Client.ID: ' + client.id);
-        // });
+        wsConnect.initData(ws);
+        ws.onmessage = wsConnect.onMessage(ws);
+        // ws.onmessage = async (byteString) => {
+        //     console.log('on message');
+        // }
     });
 })
 

@@ -8,6 +8,7 @@ const useChat = () => {
     
     const sendData = async (data) => {
         // alert('sending') 
+        console.log('data is',data)
         await client.send(JSON.stringify(data));
         // data sent thru internet is treated as byte string, therefore must be stringified
     };
@@ -27,6 +28,7 @@ const useChat = () => {
             }
             case 'init' : {
                 console.log("In Init")
+                console.log('payload is: ',payload)
                 setMessages(payload);
                 break;
             } 
@@ -40,6 +42,7 @@ const useChat = () => {
     }
 
     const clearMessages = () => {
+        console.log('sending clears in the clearMessage function')
         sendData(['clear']);
     };
 
