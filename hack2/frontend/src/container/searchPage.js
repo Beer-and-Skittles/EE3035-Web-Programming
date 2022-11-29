@@ -20,17 +20,28 @@ const SearchPage = () => {
     const [restaurants, setRestaurant] = useState([])
     const getRestaurant = async () => {
         // TODO Part I-3-b: get information of restaurants from DB
-        console.log('getRestaurant');
         const priceFilter = state.priceFilter;
         const mealFilter = state.mealFilter;
         const typeFilter = state.typeFilter;
         const sortBy = state.sortBy;
-        // console.log(priceFilter, mealFilter, typeFilter, sortBy);
+
+        console.log(priceFilter, mealFilter, typeFilter, sortBy);
+
+
         const {
-            data: { message, content },
-        } = await axios.get('http://localhost:4000/api/getSearch', null);
+            data: { message, contents},
+        } = await axios.get('http://localhost:4000/api/getSearch', 
+        {params: {
+            priceFilter, mealFilter, typeFilter, sortBy
+          }});
         
-        console.log();
+        if(message === 'success'){
+            console.log('success!');
+            setRestaurant(contents);
+        }else{
+            console.log('error');
+        }
+        // console.log(contents[0].name);
 
     }
 
@@ -42,6 +53,8 @@ const SearchPage = () => {
     const navigate = useNavigate();
     const ToRestaurant = (id) => {
         // TODO Part III-1: navigate the user to restaurant page with the corresponding id
+        console.log('to restaurant');
+        navigate('/restaurant/'+id);
     }
     const getPrice = (price) => {
         let priceText = ""
@@ -50,13 +63,25 @@ const SearchPage = () => {
         return (priceText)
     }
 
+    const mergeTags = (tags) => {
+        let output_string = ""
+        for (let i=0; i<tags.length; i++){
+            if (i===0){
+                output_string += tags[i];
+            }else{
+                output_string += (', ' + tags[i]);
+            }
+        }
+        return output_string;
+    }
+
     return (
 
         <div className='searchPageContainer'>
             {
-                restaurants.map(({id, img, name, price}) => (
+                restaurants.map(({id, name, tag, img, time, distance, price}) => (
                     // TODO Part I-2: search page front-end
-                    <div className='resBlock' id={id} key={id}>
+                    <div className='resBlock' id={id} key={id} onClick={() => ToRestaurant(id)}>
                         <div className='resImgContainer'>
                             <img className='resImg' src={img}></img>
                         </div>
@@ -64,9 +89,9 @@ const SearchPage = () => {
                             <div className='title'>
                                 <p className='name'>{name}</p>
                                 <p className='price'>{getPrice(price)}</p>
-                                <p className='distance'></p>
+                                <p className='distance'>{distance/1000} km</p>
                             </div>
-                            <div className='description'></div>
+                            <p className='description'>{mergeTags(tag)}</p>
                         </div>
                     </div>
                 ))

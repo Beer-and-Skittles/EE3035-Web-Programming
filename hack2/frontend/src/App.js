@@ -16,7 +16,6 @@ import RestaurantPage from './container/restaurantPage';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 function App() {
-    // route is done, everything is in componentns and container
     return (
         <Router>
             <NavBar />

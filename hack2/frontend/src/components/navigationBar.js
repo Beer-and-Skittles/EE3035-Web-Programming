@@ -40,13 +40,12 @@ const NavBar = () => {
         // See README for hint
         // FIXME - Modify below
 
-        // navigate('/search');
         navigate('/search', {
             state: {
                 priceFilter: priceFilter,
                 mealFilter: mealFilter,
                 typeFilter: typeFilter,
-                sortBy: true
+                sortBy: sortMethod
             }
         });
 
@@ -55,7 +54,7 @@ const NavBar = () => {
         <div className='navBarContainer'>
             <a href="/">
                 <div className='titleContainer'>
-                    <h1>{mealFilter}</h1>
+                    <h1>Hugo Eat</h1>
                 </div>
             </a>
             <div className='functionRow'>

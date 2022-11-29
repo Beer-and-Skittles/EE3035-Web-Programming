@@ -28,13 +28,27 @@ const Comment = ({ restaurantId, comments, setComments, setLoad }) => {
 
 
     const storeComment = async () => {
-        await instance.post('createComment/', {
+        console.log('in store comment');
+        await instance.post('http://localhost:4000/api/createComment', {
             // TODO Part III-3-b: store the comment to the DB
-        })
+            restaurantId: restaurantId,
+            name: name,
+            rating: rating,
+            content: content
+        });
     }
 
     const submitComment = () => {
         // TODO Part III-3-b: submit a comment and reset input fields
+        // console.log('submitComment',content,name);
+        if (content !== '' && name !== '' && rating !== 0){
+            storeComment();
+            setComments([...comments, 
+            {restaurantId: restaurantId, name: name, rating:rating, content:content}])
+            setContent('');
+            setName('');
+            setRating(0);
+        }
     }
     return (
         <div className='commentContainer'>

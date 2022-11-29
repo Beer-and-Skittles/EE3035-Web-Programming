@@ -13,28 +13,45 @@ import '../css/restaurantPage.css'
 const Information = ({ info, rating }) => {
 
     const getTag = (tags) => {
-        return (
-            <>
-                {/* TODO Part III-2-a render tags */}
-            </>
-        )
+
+        return(
+        <>{
+            tags.map((item) => (
+                <div className='tag' key={item}>{item}</div>
+            ))
+        }</>
+        );
     }
     const getPriceTag = (price) => {
         let priceText = ""
         for (let i = 0; i < price; i++)
             priceText += "$"
         return (
-            <>
-                {/* TODO Part III-2-a render price tags; hint: convert price number to dollar signs first */}
-            </>
+            <div className='tag' key={price}>{(price === 1) ? ('$') : ((price === 2) ? ('$$') : ('$$$'))}</div>
         )
     }
 
+    const days = ["Mon", "Tue", "Wed", "Thr", "Fri", "Sat", "Sun"];
     const getBusiness = (time) => {
         
         return (
             <div className='businessTime'>
-                {/* TODO Part III-2-c: render business time for each day*/}
+            {
+                days.map((day) => (
+                    <div className='singleDay'>
+                        <div className='day'>{day}</div>
+                        {(typeof(time["All"]) === typeof('a')) ? 
+                        (
+                            <div className='time'>{time["All"]}</div>
+                        ):(
+                            <div className='time'>{(typeof(time[day]) === typeof('a'))  ? 
+                            (time[day]):('Closed')}</div>
+                        )}  
+                        
+                    </div>
+                ))
+                
+            }
             </div>
         )
     }
