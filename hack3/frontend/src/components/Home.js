@@ -78,7 +78,8 @@ function Home() {
         },
       });
     },
-    [subscribeToMore],
+    // [subscribeToMore],
+    [],
   );
   // TODO 6.5 End 
 
