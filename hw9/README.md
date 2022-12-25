@@ -13,6 +13,6 @@ deployment 步驟請參考pdf檔
 按照助教提供的步驟進行deploy會出現error:
 > Error: error:0308010C:digital envelope routines::unsupported
 
-上網查了一下推測可能是 node version 的問題，在 package.json 中加上
-![package.json](./added.png)
+上網查了一下推測可能是 node version 的問題，在 package.json 中加上\
+![package.json](./added.png)\
 問題就解決了
